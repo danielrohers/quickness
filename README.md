@@ -8,7 +8,7 @@
 
 ## Quick Start
 
-The quickest way to get started with quickness is to utilize the executable `express(1)` to generate an application as shown below:
+The quickest way to get started with quickness is to utilize the executable `quickness(1)` to generate an application as shown below:
 
 Create the app:
 ```bash
