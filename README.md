@@ -2,7 +2,7 @@
 
 [Quickness](https://github.com/danielrohers/quickness-bootstrap) application generator.
 
-[![NPM Version](https://img.shields.io/npm/v/danielrohers/quickness.svg?style=flat)](https://www.npmjs.org/package/quickness)
+[![npm version](https://img.shields.io/npm/v/quickness.svg)](https://badge.fury.io/js/quickness)
 [![NPM Downloads](https://img.shields.io/npm/dm/quickness.svg?style=flat)](https://www.npmjs.org/package/quickness)
 [![Build Status](https://img.shields.io/travis/danielrohers/quickness.svg?style=flat)](https://travis-ci.org/danielrohers/quickness)
 
