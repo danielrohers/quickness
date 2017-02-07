@@ -7,5 +7,5 @@ node_js:
 install:
   - npm install
 script:
-  - npm run elsint
+  - npm run eslint
   - npm test
