@@ -21,8 +21,6 @@ const listFiles = [
   '_site',
   'assets',
   '.editorconfig',
-  '.gitignore',
-  '.npmignore',
   'gulpfile.js',
   'README.md',
 ];
@@ -44,10 +42,11 @@ function logCreated(name) {
   console.log(`created: ${name}`);
 }
 
-function copyTemplate(from, to) {
+function copyTemplate(from, to, newName) {
+  const rename = newName || null;
   try {
     const origin = getFrom(from);
-    const destination = `${to}/${from}`;
+    const destination = `${to}/${rename || from}`;
     fs.statSync(origin);
     fs.copySync(origin, destination);
     logCreated(destination);
@@ -58,6 +57,16 @@ function copyTemplate(from, to) {
 
 function copyFiles() {
   listFiles.forEach(file => copyTemplate(file, destinationPath));
+}
+
+function resolveGitignore() {
+  const gitignore = '.gitignore';
+  try {
+    fs.statSync(`${getFrom(gitignore)}`);
+    copyTemplate(gitignore, destinationPath);
+  } catch (e) {
+    copyTemplate('.npmignore', destinationPath, gitignore);
+  }
 }
 
 function createPackageJson() {
@@ -88,5 +97,6 @@ function logSuccess() {
 }
 
 copyFiles();
+resolveGitignore();
 createPackageJson();
 logSuccess();
