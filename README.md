@@ -2,9 +2,9 @@
 
 [Quickness](https://github.com/danielrohers/quickness-bootstrap) application generator.
 
-[![NPM Version](https://img.shields.io/npm/v/danielrohers/quickness-bootstrap.svg?style=flat)](https://www.npmjs.org/package/quickness)
+[![NPM Version](https://img.shields.io/npm/v/danielrohers/quickness.svg?style=flat)](https://www.npmjs.org/package/quickness)
 [![NPM Downloads](https://img.shields.io/npm/dm/quickness.svg?style=flat)](https://www.npmjs.org/package/quickness)
-[![Build Status](https://img.shields.io/travis/danielrohers/quickness-bootstrap.svg?style=flat)](https://travis-ci.org/danielrohers/quickness-bootstrap)
+[![Build Status](https://img.shields.io/travis/danielrohers/quickness.svg?style=flat)](https://travis-ci.org/danielrohers/quickness)
 
 ## Quick Start
 
