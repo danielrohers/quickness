@@ -22,6 +22,7 @@ const listFiles = [
   'assets',
   '.editorconfig',
   '.gitignore',
+  '.npmignore',
   'gulpfile.js',
   'README.md',
 ];
@@ -44,10 +45,15 @@ function logCreated(name) {
 }
 
 function copyTemplate(from, to) {
-  const origin = getFrom(from);
-  const destination = `${to}/${from}`;
-  fs.copySync(origin, destination);
-  logCreated(destination);
+  try {
+    const origin = getFrom(from);
+    const destination = `${to}/${from}`;
+    fs.statSync(origin);
+    fs.copySync(origin, destination);
+    logCreated(destination);
+  } catch (e) {
+    // console.log(e);
+  }
 }
 
 function copyFiles() {
