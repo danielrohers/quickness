@@ -1,4 +1,4 @@
 [submodule "templates"]
 	path = templates
-	url = https://github.com/danielrohers/quickness.git
+	url = https://github.com/danielrohers/quickness-bootstrap.git
   # url = git://github.com/danielrohers/quickness-bootstrap.git
