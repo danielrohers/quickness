@@ -1,0 +1,69 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const fs = require('fs-extra');
+const path = require('path');
+
+const { version } = require('../package.json');
+
+// CLI
+
+program
+  .version(version)
+  .parse(process.argv);
+
+const destinationPath = program.args.shift() || '.';
+
+const listFiles = [
+  '_includes',
+  '_layouts',
+  '_mixins',
+  '_site',
+  'assets',
+  '.editorconfig',
+  '.gitignore',
+  'gulpfile.js',
+  'README.md',
+];
+
+function getFrom(name) {
+  return path.join(__dirname, '..', '/templates', name);
+}
+
+function getProjectName() {
+  if (destinationPath !== '.') return destinationPath;
+  return path.basename(__dirname);
+}
+
+function logCreated(name) {
+  console.log(`created: ${name}`);
+}
+
+function copyTemplate(from, to) {
+  const origin = getFrom(from);
+  const destination = `${to}/${from}`;
+  fs.copySync(origin, destination);
+  logCreated(destination);
+}
+
+function copyFiles() {
+  listFiles.forEach(file => copyTemplate(file, destinationPath));
+}
+
+function createPackageJson() {
+  const pck = require(getFrom('package.json'));
+  const data = {
+    name: getProjectName(),
+    version: '0.0.0',
+    description: '',
+    scripts: pck.scripts,
+    engines: pck.engines,
+    devDependencies: pck.devDependencies,
+  };
+  const destination = `${destinationPath}/package.json`;
+  fs.writeJsonSync(destination, data);
+  logCreated(destination);
+}
+
+copyFiles();
+createPackageJson();

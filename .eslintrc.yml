@@ -1,0 +1,7 @@
+extends: airbnb-base
+plugins:
+  - import
+rules:
+  global-require: off
+  import/no-dynamic-require: off
+  no-console: off
