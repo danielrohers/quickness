@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/danielrohers/quickness/issues"
   },
-  "homepage": "https://github.com/danielrohers/quickness#readme"
+  "homepage": "https://github.com/danielrohers/quickness#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }
