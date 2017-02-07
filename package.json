@@ -14,6 +14,7 @@
   "files": [
     "bin/",
     "templates/",
+    ".gitignore",
     ".gitmodules",
     "README.md",
     "LICENSE"
