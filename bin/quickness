@@ -30,9 +30,13 @@ function getFrom(name) {
   return path.join(__dirname, '..', '/templates', name);
 }
 
+function isFolderPath() {
+  return destinationPath === '.';
+}
+
 function getProjectName() {
-  if (destinationPath !== '.') return destinationPath;
-  return path.basename(__dirname);
+  if (isFolderPath()) return path.basename(__dirname);
+  return destinationPath;
 }
 
 function logCreated(name) {
@@ -65,5 +69,18 @@ function createPackageJson() {
   logCreated(destination);
 }
 
+function logSuccess() {
+  if (!isFolderPath()) {
+    console.log('\n### Application app:');
+    console.log(`$ cd ${getProjectName()}`);
+  }
+  console.log('\n### Install dependencies:');
+  console.log('$ npm install');
+
+  console.log('\n### Run the app:');
+  console.log('$ npm start\n');
+}
+
 copyFiles();
 createPackageJson();
+logSuccess();
