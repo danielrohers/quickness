@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/danielrohers/quickness#readme",
   "dependencies": {
-    "commander": "^2.9.0",
+    "commander": "^2.10.0",
     "fs-extra": "^3.0.1"
   },
   "devDependencies": {
