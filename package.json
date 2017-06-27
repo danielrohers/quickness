@@ -1,6 +1,6 @@
 {
   "name": "quickness",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Quickness application generator.",
   "scripts": {
     "eslint": "eslint ./bin/*",
